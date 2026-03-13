@@ -17,6 +17,9 @@ importers:
       astro:
         specifier: ^6.0.4
         version: 6.0.4(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)
+      astro-stylex:
+        specifier: workspace:*
+        version: link:packages/astro-stylex
       svelte:
         specifier: ^5.53.11
         version: 5.53.11
@@ -69,6 +72,18 @@ importers:
       typescript-eslint:
         specifier: ^8.57.0
         version: 8.57.0(eslint@10.0.3)(typescript@5.9.3)
+
+  packages/astro-stylex:
+    dependencies:
+      '@stylexjs/stylex':
+        specifier: '>=0.18.0'
+        version: 0.18.1
+      '@stylexjs/unplugin':
+        specifier: '>=0.18.0'
+        version: 0.18.1(unplugin@2.3.11)
+      astro:
+        specifier: '>=4.0.0'
+        version: 6.0.4(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)
 
 packages:
 

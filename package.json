@@ -18,6 +18,7 @@
     "@astrojs/svelte": "^8.0.0",
     "@stylexjs/stylex": "0.18.1",
     "astro": "^6.0.4",
+    "astro-stylex": "workspace:*",
     "svelte": "^5.53.11"
   },
   "devDependencies": {
