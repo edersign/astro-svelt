@@ -1,0 +1,16 @@
+---
+/**
+ * StyleX CSS injection for Astro.
+ *
+ * Astro doesn't use Vite's `transformIndexHtml` hook, so the
+ * @stylexjs/unplugin vite plugin cannot auto-inject the dev CSS link.
+ * This component bridges that gap:
+ *   - DEV:  adds <link> to /virtual:stylex.css + HMR runtime script
+ *   - PROD: no-op (CSS is bundled by the plugin's generateBundle hook)
+ *
+ * Usage: place <StyleXHead /> inside <head> in your layout.
+ */
+const isDev = import.meta.env.DEV;
+---
+
+{isDev && <link rel="stylesheet" href="/virtual:stylex.css" />}
