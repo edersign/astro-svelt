@@ -10,11 +10,11 @@ interface Props {
 }
 
 const { href, title, body } = Astro.props;
-const stylexButton = stylex.props(styles.Button);
+const buttonStyleProps = stylex.props(styles.Button);
 ---
 
 <li class="link-card">
-	<button class:list={[stylexButton.className]}>Action</button>
+	<button class:list={[buttonStyleProps.className]}>Action</button>
 	<a href={href}>
 		<h2>
 			{title}
