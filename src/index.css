@@ -1,13 +1,15 @@
 /* Ensure a CSS asset exists for StyleX to append to at build time */
 :root {
-  --bg: #f8f9fb;
+	--bg: #f8f9fb;
 }
+
 html,
 body,
 #root {
-  height: 100%;
+	height: 100%;
 }
+
 body {
-  margin: 0;
-  background: var(--bg);
+	margin: 0;
+	background: var(--bg);
 }

@@ -6,14 +6,19 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit",
+    "source.organizeImports": "never"
   },
   "eslint.validate": [
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
+    "astro",
+    "svelte"
   ],
+  "stylelint.validate": ["css", "astro", "svelte"],
   "oklchPreview.additionalFilePatterns": [
     "**/*.css.ts",
     "**/*.styles.ts",
@@ -33,6 +38,9 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
   "files.readonlyInclude": {
     "**/routeTree.gen.ts": true,
     "**/.tanstack/**/*": true,
@@ -51,23 +59,14 @@
     "pnpm-lock.yaml": true,
     "bun.lock": true
   },
-  //"explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
     "tsconfig.json": "tsconfig.*.json, env.d.ts",
     "vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*",
-    "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .prettier*, prettier*, .editorconfig, .gitattributes, bun.lock"
+    "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .prettier*, prettier*, .editorconfig, .gitattributes, .stylelint*, stylelint*, bun.lock"
   },
-  // always choose typescript from node_modules
   "typescript.tsdk": "./node_modules/typescript/lib",
-  // use LF line endings
   "files.eol": "\n",
-  // set prettier as default formatter for json, ts, tsx, js, jsx, html, css
   "[json][jsonc][typescript][typescriptreact][javascript][javascriptreact][html][css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  //Next.js
-  "workbench.editor.customLabels.patterns": {
-    "*/app/*/{page,route,layout,index}.{ts,tsx}": "(${dirname})/${filename}.${extname}",
-    "**/index.{ts,tsx}": "${dirname}/index.${extname}"
   }
 }
