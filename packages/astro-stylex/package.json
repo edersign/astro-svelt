@@ -1,0 +1,28 @@
+{
+	"name": "astro-stylex",
+	"version": "0.1.0",
+	"description": "Astro integration for StyleX — zero PostCSS / Babel config required",
+	"license": "MIT",
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts",
+		"./StyleXHead.astro": "./components/StyleXHead.astro"
+	},
+	"files": [
+		"src",
+		"components",
+		"README.md"
+	],
+	"keywords": [
+		"astro",
+		"astro-integration",
+		"stylex",
+		"css-in-js",
+		"vite"
+	],
+	"peerDependencies": {
+		"@stylexjs/stylex": ">=0.18.0",
+		"@stylexjs/unplugin": ">=0.18.0",
+		"astro": ">=4.0.0"
+	}
+}
