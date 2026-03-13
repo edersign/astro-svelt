@@ -111,6 +111,16 @@ for the full list.
 
 No PostCSS plugin. No standalone Babel config. Just Vite + unplugin. 🚀
 
+## Notes
+
+- **Source-level package:** exports point directly to TypeScript source
+  (`.ts`) and `.astro` files. Astro / Vite process them automatically, so
+  no separate build step is needed. If you publish to npm, consider adding a
+  build step that emits compiled JS.
+- **Peer dependencies:** `@stylexjs/stylex`, `@stylexjs/unplugin`, and
+  `astro` are declared as peer dependencies — install them in your project
+  alongside this integration.
+
 ## License
 
 MIT
