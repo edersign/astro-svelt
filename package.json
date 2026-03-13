@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/svelte": "^8.0.0",
+    "@stylexjs/stylex": "0.18.1",
     "astro": "^6.0.4",
     "svelte": "^5.53.11"
   },

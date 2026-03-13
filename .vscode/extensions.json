@@ -1,4 +1,25 @@
 {
-  "recommendations": ["astro-build.astro-vscode"],
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "svelte.svelte-vscode",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "EditorConfig.EditorConfig",
+    "christian-kohler.path-intellisense",
+    "ms-vscode.vscode-typescript-next",
+    "nize.oklch-preview",
+    "bradlc.vscode-tailwindcss",
+    "unifiedjs.vscode-mdx",
+    "yoavbls.pretty-ts-errors",
+    "yash-singh.stylex",
+    "csstools.postcss",
+    "Vue.volar",
+    "ms-playwright.playwright",
+    "christian-kohler.path-intellisense",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "pranaygp.vscode-css-peek",
+    "Zignd.html-css-class-completion"
+  ],
   "unwantedRecommendations": []
 }
