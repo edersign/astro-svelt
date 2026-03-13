@@ -1,35 +1,90 @@
-# To learn more about how to use Nix to configure your environment
-# see: https://developers.google.com/idx/guides/customize-idx-env
 { pkgs, ... }: {
   # Which nixpkgs channel to use.
-  channel = "stable-24.05"; # or "unstable"
+  channel = "stable-24.05"; # Or "unstable"
   # Use https://search.nixos.org/packages to find packages
-  packages = [ pkgs.nodejs_20 ];
+  packages = [
+    pkgs.bun
+    pkgs.pnpm
+    pkgs.npm-check-updates
+    pkgs.nodejs_22
+  ];
   # Sets environment variables in the workspace
-  env = { };
-  idx = {
-    # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
-    extensions = [ "astro-build.astro-vscode" ];
-    workspace = {
-      # Runs when a workspace is first created with this `dev.nix` file
-      onCreate = {
-        install =
-          "npm ci --prefer-offline --no-audit --no-progress --timing || npm i --no-audit --no-progress --timing";
-        # Open editors for the following files by default, if they exist:
-        default.openFiles = [ "src/pages/index.astro" ];
-      };
-      # To run something each time the workspace is (re)started, use the `onStart` hook
-    };
-    # Enable previews and customize configuration
-    previews = {
-      enable = true;
+  env = { HOME = "/home/user"; };
+  # Fast way to run scripts. Use a script name on the left and the script
+  # on the right. You can use wildcards on the left for file patterns and
+  # on the right to reference the file that was matched.
+  #
+  # Example:
+  #
+  # replit.nix = {
+  #   "*.py" = {
+  #     command = ["python", "$file"];
+  #   };
+  # };
+  idx.scripts = {};
+
+  # You can change the language and packages of your environment.
+  # A full list of options is available at https://idx.dev/reference/dev-nix
+  idx.workspace = {
+    vscode = {
+      extensions = [
+        "ms-vscode.vscode-typescript-next"
+        "svelte.svelte-vscode"
+        "unifiedjs.vscode-mdx"
+        "csstools.postcss"
+        "Vue.volar"
+        "ms-playwright.playwright"
+        "esbenp.prettier-vscode"
+        "dbaeumer.vscode-eslint"
+        "bradlc.vscode-tailwindcss"
+        "ms-vscode.brackets-keybindings"
+        "ms-vscode.brackets-pack"
+        "astro-build.astro-vscode"
+        "christian-kohler.path-intellisense"
+        "CoenraadS.bracket-pair-colorizer-2"
+        "EditorConfig.EditorConfig"
+        "formulahendry.auto-close-tag"
+        "formulahendry.auto-rename-tag"
+        "google.gemini-cli-vscode-ide-companion"
+        "pranaygp.vscode-css-peek"
+        "ritwickdey.LiveServer"
+        "Zignd.html-css-class-completion"
+        ];
+      
+      # Enable previews and customize configuration
+       # Enable previews
       previews = {
-        web = {
-          command =
-            [ "npm" "run" "dev" "--" "--port" "$PORT" "--hostname" "0.0.0.0" ];
-          manager = "web";
-        };
+        enable = true;
+        previews = [
+          {
+            # Example: run "npm run dev" with PORT set to IDX's defined port for previews,
+            # and show it in IDX's web preview panel
+           web = {
+            command =
+              [ "pnpm" "run" "dev" "--" "--port" "$PORT" "--hostname" "0.0.0.0" ];
+            manager = "web";
+          };
+          }
+        ];
       };
     };
   };
+  
+  # The following describes the NixOS configuration that should be used in
+  # your workspace. This is where you'll put almost all of your NixOS
+  # configuration.
+  #
+  # The docs for all available options are available at
+  # https://search.nixos.org/options
+  #
+  # The following is a sample configuration that sets up a Postgresql service
+  # in your workspace.
+  #
+  # services.postgresql = {
+  #   enable = true;
+  #   package = pkgs.postgresql_15;
+  #   initialDatabases = [
+  #     { name = "my-db"; }
+  #   ];
+  # };
 }
