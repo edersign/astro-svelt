@@ -8,6 +8,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint . && stylelint \"src/**/*.{css,astro,svelte}\"",
+    "lint:eslint": "eslint .",
+    "lint:stylelint": "stylelint \"src/**/*.{css,astro,svelte}\"",
     "lint:fix": "eslint . --fix && stylelint \"src/**/*.{css,astro,svelte}\" --fix",
     "format": "prettier --write \"**/*.{js,mjs,ts,tsx,astro,svelte,json,css,md}\"",
     "format:check": "prettier --check \"**/*.{js,mjs,ts,tsx,astro,svelte,json,css,md}\""
