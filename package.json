@@ -6,7 +6,11 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint . && stylelint \"src/**/*.{css,astro,svelte}\"",
+    "lint:fix": "eslint . --fix && stylelint \"src/**/*.{css,astro,svelte}\" --fix",
+    "format": "prettier --write \"**/*.{js,mjs,ts,tsx,astro,svelte,json,css,md}\"",
+    "format:check": "prettier --check \"**/*.{js,mjs,ts,tsx,astro,svelte,json,css,md}\""
   },
   "dependencies": {
     "@astrojs/svelte": "^8.0.0",
@@ -15,6 +19,21 @@
     "svelte": "^5.53.11"
   },
   "devDependencies": {
-    "@stylexjs/unplugin": "^0.18.1"
+    "@eslint/js": "^10.0.1",
+    "@stylexjs/unplugin": "^0.18.1",
+    "eslint": "^10.0.3",
+    "eslint-plugin-astro": "^1.6.0",
+    "eslint-plugin-import-x": "^4.16.2",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-svelte": "^3.15.2",
+    "globals": "^17.4.0",
+    "prettier": "^3.8.1",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-svelte": "^3.5.1",
+    "stylelint": "^17.4.0",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-standard": "^40.0.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.57.0"
   }
 }

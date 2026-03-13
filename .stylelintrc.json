@@ -1,0 +1,30 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-html"],
+  "rules": {
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ],
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["apply", "layer", "theme"]
+      }
+    ],
+    "no-descending-specificity": null,
+    "custom-property-pattern": null
+  },
+  "overrides": [
+    {
+      "files": ["**/*.astro"],
+      "customSyntax": "postcss-html"
+    },
+    {
+      "files": ["**/*.svelte"],
+      "customSyntax": "postcss-html"
+    }
+  ],
+  "ignoreFiles": ["dist/**", "node_modules/**", ".astro/**"]
+}
